@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+// Colors
+
+$white: #ffffff;
+$gray-100: #f5f6fa;
+$gray-300: #e6e9f4;
+$gray-500: #d7dbec;
+$gray-700: #7e84a3;
+$gray-900: #131523;
+$black: #000;
+
+$grays: ();
+
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "300": $gray-300,
+    "500": $gray-500,
+    "700": $gray-700,
+    "900": $gray-900,
+  ),
+  $grays
+);
+
+//--#{$color}
+$blue: #0058ff;
+$indigo: #444054;
+$purple: #794c8a;
+$pink: #f65ca2;
+$red: #f0142f;
+$orange: #f99600;
+$yellow: #ffc700;
+$green: #21d59b;
+$teal: #16e0bd;
+$cyan: #57b8ff;
+$blue-light: #d5d7e3;
+
+$primary: $blue;
+$secondary: $gray-500;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $blue-light;
+$dark: $gray-900;
+
+$theme-colors: ();
+
+$theme-colors: map-merge(
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+  ),
+  $theme-colors
+);
+
+// BOOTSTRAP OVERWRITES
+
+$headings-font-weight: 400;
+
+$font-size-base: 0.94rem;
+$font-size-lg: ($font-size-base * 1.25);
+$font-size-sm: ($font-size-base * 1.1);
+$font-size-xs: ($font-size-base / 1.1);
+
+$btn-transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+  box-shadow 0.15s;
+$btn-focus-width: 0;
+$btn-focus-box-shadow: none;
+
+$pagination-focus-box-shadow: none;
+
+$body-color: $gray-700;
+
+$card-cap-bg: $white;
+$card-border-color: rgba(darken($primary, 25%), 0.125);
+
+$dropdown-min-width: 15rem;
+$dropdown-link-hover-bg: #e0f3ff;
+$dropdown-item-padding-y: 0.4rem;
+$dropdown-padding-y: 0.65rem;
+
+$box-shadow-default: 0 0.46875rem 2.1875rem rgba(darken($primary, 50%), 0.03),
+  0 0.9375rem 1.40625rem rgba(darken($primary, 50%), 0.03),
+  0 0.25rem 0.53125rem rgba(darken($primary, 50%), 0.05),
+  0 0.125rem 0.1875rem rgba(darken($primary, 50%), 0.03);
+
+$box-shadow-default-right: 0.46875rem 0 2.1875rem
+    rgba(darken($primary, 50%), 0.03),
+  0.9375rem 0 1.40625rem rgba(darken($primary, 50%), 0.03),
+  0.25rem 0 0.53125rem rgba(darken($primary, 50%), 0.05),
+  0.125rem 0 0.1875rem rgba(darken($primary, 50%), 0.03);
+
+$box-shadow-default-inverse: 0 -0.46875rem 2.1875rem rgba(darken($primary, 50%), 0.03),
+  0 -0.9375rem 1.40625rem rgba(darken($primary, 50%), 0.03),
+  0 -0.25rem 0.53125rem rgba(darken($primary, 50%), 0.05),
+  0 -0.125rem 0.1875rem rgba(darken($primary, 50%), 0.03);
+
+$box-shadow-lg-default: 0 0.76875rem 2.4875rem rgba($gray-900, 0.3),
+  0 1.3375rem 1.70625rem rgba($gray-900, 0.3),
+  0 0.55rem 0.53125rem rgba(darken($gray-900, 50%), 0.05),
+  0 0.225rem 0.4375rem rgba($gray-900, 0.3);
+
+$form-check-input-margin-y: 0.3rem;
+
+$input-group-addon-bg: lighten($dropdown-link-hover-bg, 3%);
+
+@function text($bg) {
+  @if (lightness($bg) > 62%) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Mixins
+
+@mixin btn-type($background: $blue, $color: #fff) {
+  border-radius: 4px;
+  color: $color;
+  background-color: $background;
+  text-transform: none;
+  font-weight: 600;
+  transition: 0.25s ease-in-out;
+
+  &:hover {
+    background-color: darken($background, 5%);
+  }
+  &:active {
+    background-color: darken($background, 10%);
+  }
+  &:focus {
+    background-color: darken($background, 10%);
+    box-shadow: 0 0 0 3px transparentize($background, 0.8);
+  }
+  &:disabled {
+    background-color: darken($light, 5%);
+    color: darken($light, 30%);
+  }
+}
+
+@mixin outline-btn-type($background: $blue) {
+  line-height: 35px !important;
+  border-radius: 4px;
+  border: 2px solid $background;
+  color: $background;
+  background-color: transparent;
+  text-transform: none;
+  font-weight: 600;
+  transition: 0.25s ease-in-out !important;
+
+  &:hover {
+    color: text($background);
+    background-color: darken($background, 5%);
+    border-color: darken($background, 5%);
+  }
+  &:active {
+    color: text($background);
+    background-color: darken($background, 10%);
+    border-color: darken($background, 10%);
+  }
+  &:focus {
+    color: text($background);
+    background-color: darken($background, 10%);
+    border-color: darken($background, 10%);
+    box-shadow: 0 0 0 3px transparentize($background, 0.8);
+  }
+  &:disabled {
+    background-color: darken($light, 5%);
+    color: darken($light, 30%);
+  }
+}
+
+@mixin box-shadow-architect($shadow) {
+  box-shadow: 0 0.66875rem 2.3875rem rgba($shadow, 0.03),
+    0 1.1375rem 1.60625rem rgba($shadow, 0.03),
+    0 0.45rem 0.73125rem rgba($shadow, 0.05),
+    0 0.325rem 0.3875rem rgba($shadow, 0.03);
+}
+
+// Border
+
+@each $color, $value in $theme-colors {
+  .border-#{$color} {
+    border-color: $value;
+  }
+}
+
+html {
+  background-color: $gray-300;
+  font-family: "Inter", sans-serif !important;
+}
+
+.book-input {
+  border-radius: 6px;
+  border: 2px solid $blue;
+}
+
+.book-primary-btn {
+  @include btn-type($blue, $white);
+}
+
+.book-primary-btn-o {
+  @include outline-btn-type($blue);
+}
