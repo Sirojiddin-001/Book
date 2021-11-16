@@ -123,11 +123,12 @@ $input-group-addon-bg: lighten($dropdown-link-hover-bg, 3%);
 // Mixins
 
 @mixin btn-type($background: $blue, $color: #fff) {
-  border-radius: 4px;
+  border-radius: 0.25rem;
   color: $color;
   background-color: $background;
   text-transform: none;
   font-weight: 600;
+  line-height: 2.5rem;
   transition: 0.25s ease-in-out;
 
   &:hover {
@@ -147,7 +148,7 @@ $input-group-addon-bg: lighten($dropdown-link-hover-bg, 3%);
 }
 
 @mixin outline-btn-type($background: $blue) {
-  line-height: 35px !important;
+  line-height: 2.25rem !important;
   border-radius: 4px;
   border: 2px solid $background;
   color: $background;
@@ -193,14 +194,32 @@ $input-group-addon-bg: lighten($dropdown-link-hover-bg, 3%);
   }
 }
 
+@each $color, $value in $grays {
+  .bg-#{$color} {
+    background-color: $value !important
+  }
+}
+
 html {
   background-color: $gray-300;
   font-family: "Inter", sans-serif !important;
 }
 
 .book-input {
-  border-radius: 6px;
-  border: 2px solid $blue;
+  border-radius: 0.25rem;
+  border: 2px solid $blue !important;
+  font-size: 0.875rem;
+  line-height: 2.5rem;
+  color: $gray-900 !important;
+  transition: 0.25s ease-in-out;
+
+  &:focus {
+    box-shadow: 0 0 0 3px transparentize($blue, 0.8);
+  }
+
+  &::placeholder {
+    color: $gray-700;
+  }
 }
 
 .book-primary-btn {
@@ -209,4 +228,86 @@ html {
 
 .book-primary-btn-o {
   @include outline-btn-type($blue);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  color: $gray-900 !important;
+}
+
+.search-input-icon {
+  position: absolute;
+  line-height: 2.5rem;
+  padding: 0 0.75rem;
+
+  & .icon {
+    color: $blue;
+    transition: 0.25s ease-in-out;
+
+    &:hover {
+      color: darken($blue, 10%);
+    }
+  }
+}
+
+.language {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border: 2px solid $blue;
+  border-radius: 100px;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+
+  &:focus {
+    box-shadow: 0 0 0 3px transparentize($blue, 0.8);
+  }
+
+  & img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: left center;
+    border: 2px solid #fff;
+    border-radius: 40px;
+  }
+}
+
+.v-divider {
+  height: 50%;
+  border-right: 2px solid $gray-300;
+  border-radius: 5px;
+}
+
+.language-select{
+  li > a {
+    color: $gray-700
+  }
+  li.active > a {
+    color: $blue;
+    font-weight: 600;
+  }
+  li > a > img {
+    width: 1.5rem !important;
+    height: 1.25rem !important;
+    margin-right: 0.5rem;
+    border-radius: 3px
+  }
+}
+
+@media(max-width: 576px){
+  .uk-navbar-nav > li > a, .uk-navbar-item, .uk-navbar-toggle{
+    min-height: 40px !important;
+  }
+
+  .uk-search-input{
+    font-size: .875rem !important;
+  }
+
+  .logo{
+    font-size: 1.5rem;
+  }
 }
