@@ -36,6 +36,10 @@ export const SmToXl = ({ children }) => {
   const isTablet = useMediaQuery({ query: "(min-width: 576px)" });
   return isTablet ? children : null;
 };
+export const SmToLg = ({ children }) => {
+  const isTablet = useMediaQuery({ minWidth: 576, maxWidth: 991 });
+  return isTablet ? children : null;
+};
 export const SmAngBelow = ({ children }) => {
   const isTablet = useMediaQuery({ query: "(max-width: 767px)" });
   return isTablet ? children : null;

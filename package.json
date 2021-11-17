@@ -1,50 +1,49 @@
 {
-  "name": "book",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.24.0",
-    "formik": "^2.2.9",
-    "history": "^5.1.0",
-    "mobx": "^6.3.7",
-    "mobx-react-lite": "^3.2.2",
-    "node-sass": "^6.0.1",
-    "react": "^17.0.2",
-    "react-country-flag": "^2.3.1",
-    "react-dom": "^17.0.2",
-    "react-flags": "^0.1.18",
-    "react-responsive": "^9.0.0-beta.4",
-    "react-router-dom": "^6.0.2",
-    "react-scripts": "4.0.3",
-    "uikit": "^3.9.2",
-    "web-vitals": "^1.1.2",
-    "yup": "^0.32.11"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "book",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.15.0",
+        "@testing-library/react": "^11.2.7",
+        "@testing-library/user-event": "^12.8.3",
+        "axios": "^0.24.0",
+        "formik": "^2.2.9",
+        "history": "^5.1.0",
+        "mobx": "^6.3.7",
+        "mobx-react-lite": "^3.2.2",
+        "node-sass": "^6.0.1",
+        "react": "^17.0.2",
+        "react-country-flag": "^2.3.1",
+        "react-dom": "^17.0.2",
+        "react-responsive": "^9.0.0-beta.4",
+        "react-router-dom": "^6.0.2",
+        "react-scripts": "4.0.3",
+        "uikit": "^3.9.2",
+        "web-vitals": "^1.1.2",
+        "yup": "^0.32.11"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { LgToXl, XSmAngBelow } from "../../hooks/useMedia";
+import { LgToXl, XSmAngBelow, SmToLg } from "../../hooks/useMedia";
 
 const Search = () => {
   return (
@@ -18,9 +18,22 @@ const Search = () => {
         </form>
       </LgToXl>
 
+      <SmToLg>
+        <a
+          className="uk-navbar-toggle pr-0"
+          uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
+          href="#search"
+        >
+          <div className="search-btn">
+            <span className="far fa-lg fa-search"></span>
+          </div>
+        </a>
+      </SmToLg>
+
+
       <XSmAngBelow>
         <a
-          className="uk-navbar-toggle"
+          className="uk-navbar-toggle search-btn-m"
           uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
           href="#search"
         >
