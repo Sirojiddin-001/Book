@@ -20,7 +20,7 @@ const Search = () => {
 
       <SmToLg>
         <a
-          className="uk-navbar-toggle pr-0"
+          className="uk-navbar-toggle px-0"
           uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
           href="#search"
         >

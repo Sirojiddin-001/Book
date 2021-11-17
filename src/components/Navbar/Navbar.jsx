@@ -6,7 +6,7 @@ import Logo from "./Logo";
 
 const Navbar = () => {
   return (
-    <nav className="uk-navbar-container" uk-navbar="mode: click">
+    <nav className="uk-background-default" uk-navbar="mode: click">
       <div className="container d-flex px-0">
         <div className="nav-overlay uk-navbar-left">
           <Logo />
