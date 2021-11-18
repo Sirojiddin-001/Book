@@ -1,7 +1,10 @@
 import React from "react";
 import { LgToXl, XSmAngBelow, SmToLg } from "../../hooks/useMedia";
+import { useTranslation } from "react-i18next";
 
 const Search = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <LgToXl>
@@ -13,7 +16,7 @@ const Search = () => {
           <input
             className="book-input uk-search-input"
             type="search"
-            placeholder="Search"
+            placeholder={t("search")}
           />
         </form>
       </LgToXl>

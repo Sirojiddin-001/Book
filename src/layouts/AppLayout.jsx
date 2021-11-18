@@ -6,7 +6,7 @@ const AppLayout = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <div className="px-0 container uk-flex pt-4">
+      <div className="px-sm-0 container uk-flex pt-4">
         <List />
         <div className="ml-0 ml-lg-4 uk-width-expand">{children}</div>
       </div>

@@ -3,8 +3,11 @@ import Search from "./Search";
 import Language from "./Language";
 import AuthBtns from "./AuthBtns";
 import Logo from "./Logo";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t } = useTranslation();
+
   return (
     <nav className="uk-background-default" uk-navbar="mode: click">
       <div className="container d-flex px-0">
@@ -26,7 +29,7 @@ const Navbar = () => {
               <input
                 className="uk-search-input"
                 type="search"
-                placeholder="Search"
+                placeholder={t("search")}
                 autoFocus
               />
             </form>

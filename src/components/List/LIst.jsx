@@ -1,14 +1,17 @@
 import React from "react";
 import { LgToXl } from "../../hooks/useMedia";
+import { useTranslation } from "react-i18next";
 
 const List = () => {
+  const { t } = useTranslation();
+
   return (
     <LgToXl>
       <div className="uk-width-1-3">
         <ul data-uk-accordion className="category-list">
           <li className="uk-open">
-            <a className="uk-accordion-title" href="#">
-              Books
+            <a className="uk-accordion-title" href="#books">
+              {t("books")}
             </a>
             <div className="uk-accordion-content">
               <ul className="uk-nav uk-nav-default">
@@ -26,7 +29,7 @@ const List = () => {
           </li>
           <li>
             <a className="uk-accordion-title" href="#">
-              Item 2
+              {t("audio_books")}
             </a>
             <div className="uk-accordion-content">
               <p>

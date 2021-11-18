@@ -1,36 +1,46 @@
-import React from "react";
+import React,{useState} from "react";
 import ReactCountryFlag from "react-country-flag";
 import { SmToXl, XSmAngBelow } from "../../hooks/useMedia";
+import { useTranslation } from "react-i18next";
 
 const Content = () => {
+  const { i18n } = useTranslation();
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language).then(() => {
+      localStorage.setItem("language", language);
+    });
+  };
+
   return (
     <ul className="uk-nav uk-dropdown-nav language-select">
       <li className="uk-nav-header">Change language</li>
 
-      <li className="active">
-        <a href="#uz">
+      <li className={i18n.language === "uz" && "active"}>
+        <a href="#uz" onClick={()=>{changeLanguage("uz")}}>
           <ReactCountryFlag countryCode="UZ" svg />
           <span>UZ</span>
         </a>
       </li>
 
-      <li>
-        <a href="#ru">
+      <li className={i18n.language === "ru" && "active"}>
+        <a href="#ru" onClick={()=>{changeLanguage("ru")}}>
           <ReactCountryFlag countryCode="RU" svg />
           <span>RU</span>
         </a>
       </li>
     </ul>
-  )
-}
+  );
+};
 
 const Language = () => {
+  const { i18n } = useTranslation();
+
   return (
     <>
       <SmToXl>
         <div className="ml-3">
           <span className="language">
-            <ReactCountryFlag countryCode="UZ" svg />
+            <ReactCountryFlag countryCode={i18n.language} svg />
           </span>
 
           <div
@@ -47,7 +57,7 @@ const Language = () => {
       <XSmAngBelow>
         <div className="ml-1 mr-3">
           <span className="language-m">
-            <ReactCountryFlag countryCode="UZ" svg />
+            <ReactCountryFlag countryCode={i18n.language} svg />
           </span>
 
           <div

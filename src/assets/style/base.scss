@@ -396,3 +396,56 @@ html {
     pointer-events: none;
   }
 }
+
+.bsi {
+  position: relative;
+  display: block;
+  border: 1px solid $gray-500;
+  border-radius: 4px;
+
+  &-body {
+    position: relative;
+    padding-bottom: 142%;
+    & img {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+    }
+  }
+
+  &-footer {
+    & > ul {
+      margin: 0;
+      padding: 0.25rem 0;
+      list-style: none;
+
+      & > li {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding: 0 0.5rem;
+        font-size: 0.875rem;
+
+        &:nth-child(1) {
+          font-weight: 600;
+          color: $gray-900;
+        }
+
+        &:nth-child(2) {
+          font-weight: 500;
+          color: $gray-700;
+        }
+
+        &:nth-child(3) {
+          font-size: 0.75rem;
+          font-weight: 500;
+          color: $gray-700;
+        }
+      }
+    }
+  }
+}
