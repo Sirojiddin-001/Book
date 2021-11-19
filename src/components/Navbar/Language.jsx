@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import ReactCountryFlag from "react-country-flag";
 import { SmToXl, XSmAngBelow } from "../../hooks/useMedia";
 import { useTranslation } from "react-i18next";

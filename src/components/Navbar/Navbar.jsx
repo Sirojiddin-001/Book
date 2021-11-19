@@ -4,16 +4,41 @@ import Language from "./Language";
 import AuthBtns from "./AuthBtns";
 import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
+import { SmToXl, SmToLg, XSmAngBelow } from "../../hooks/useMedia";
 
 const Navbar = () => {
   const { t } = useTranslation();
 
   return (
-    <nav className="uk-background-default" uk-navbar="mode: click">
+    <nav
+      className="uk-background-default book-navbar"
+      uk-navbar="mode: click"
+      data-uk-sticky
+    >
       <div className="container d-flex px-0">
         <div className="nav-overlay uk-navbar-left">
-          <Logo />
+          <XSmAngBelow>
+            <div className="uk-navbar-item">
+              <span className="far fa-bars search-btn-m"></span>
+            </div>
+          </XSmAngBelow>
+
+          <SmToLg>
+            <div className="menu-btn mr-3" tabIndex="0">
+              <span className="far fa-bars"></span>
+            </div>
+          </SmToLg>
+
+          <SmToXl>
+            <Logo />
+          </SmToXl>
         </div>
+
+        <XSmAngBelow>
+          <div className="nav-overlay uk-navbar-center">
+            <Logo />
+          </div>
+        </XSmAngBelow>
 
         <div className="nav-overlay uk-navbar-right">
           <Search />

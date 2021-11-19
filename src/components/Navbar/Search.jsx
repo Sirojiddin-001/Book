@@ -27,7 +27,7 @@ const Search = () => {
           uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
           href="#search"
         >
-          <div className="search-btn">
+          <div className="search-btn" tabIndex="0">
             <span className="far fa-lg fa-search"></span>
           </div>
         </a>

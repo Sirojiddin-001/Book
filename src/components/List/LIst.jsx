@@ -7,7 +7,7 @@ const List = () => {
 
   return (
     <LgToXl>
-      <div className="uk-width-1-3">
+      <div className="uk-width-1-3 category-block mr-4">
         <ul data-uk-accordion className="category-list">
           <li className="uk-open">
             <a className="uk-accordion-title" href="#books">

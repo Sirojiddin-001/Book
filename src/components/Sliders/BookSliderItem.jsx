@@ -1,19 +1,21 @@
 import React from "react";
 
-const BookSliderItem = () => {
+const BookSliderItem = ({ id, cover, title, author, year }) => {
   return (
     <div className="bsi">
-      <div className="bsi-body">
-        <img src="https://new.book.ru/external/books_new/942676.jpg" alt="book" />
-      </div>
+      <a href={`#${id}`}>
+        <div className="bsi-body">
+          <img src={`https://new.book.ru${cover}`} alt={title} />
+        </div>
 
-      <div className="bsi-footer">
-        <ul>
-          <li>Title</li>
-          <li>Author</li>
-          <li>Year</li>
-        </ul>
-      </div>
+        <div className="bsi-footer">
+          <ul>
+            <li>{title}</li>
+            <li>{author}</li>
+            <li>{year}</li>
+          </ul>
+        </div>
+      </a>
     </div>
   );
 };
