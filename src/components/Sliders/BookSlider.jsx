@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import BookSliderItem from "./BookSliderItem";
 
 const BookSlider = () => {
+  const {t} = useTranslation()
+
   return (
     <div
       className="uk-card uk-background-default uk-border-rounded border-500"
@@ -9,7 +12,7 @@ const BookSlider = () => {
       data-uk-slider="finite: true; sets: true"
     >
       <div className="card-header">
-        <h4 className="card-title uk-text-truncate">New Books</h4>
+        <h4 className="card-title uk-text-truncate">{t("new_books")}</h4>
         <div className="ml-auto d-flex">
           <a
             className="slider-btn mr-2"
