@@ -15,15 +15,25 @@ const Content = () => {
     <ul className="uk-nav uk-dropdown-nav language-select">
       <li className="uk-nav-header">Change language</li>
 
-      <li className={i18n.language === "uz" && "active"}>
-        <a href="#uz" onClick={()=>{changeLanguage("uz")}}>
+      <li className={i18n.language === "uz" ? "active" : ""}>
+        <a
+          href="#uz"
+          onClick={() => {
+            changeLanguage("uz");
+          }}
+        >
           <ReactCountryFlag countryCode="UZ" svg />
           <span>UZ</span>
         </a>
       </li>
 
-      <li className={i18n.language === "ru" && "active"}>
-        <a href="#ru" onClick={()=>{changeLanguage("ru")}}>
+      <li className={i18n.language === "ru" ? "active" : ""}>
+        <a
+          href="#ru"
+          onClick={() => {
+            changeLanguage("ru");
+          }}
+        >
           <ReactCountryFlag countryCode="RU" svg />
           <span>RU</span>
         </a>

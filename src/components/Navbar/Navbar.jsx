@@ -18,13 +18,13 @@ const Navbar = () => {
       <div className="container d-flex px-0">
         <div className="nav-overlay uk-navbar-left">
           <XSmAngBelow>
-            <div className="uk-navbar-item">
+            <div className="uk-navbar-item" uk-toggle="target: #vertical-menu">
               <span className="far fa-bars search-btn-m"></span>
             </div>
           </XSmAngBelow>
 
           <SmToLg>
-            <div className="menu-btn mr-3" tabIndex="0">
+            <div className="menu-btn mr-3" tabIndex="0" uk-toggle="target: #vertical-menu">
               <span className="far fa-bars"></span>
             </div>
           </SmToLg>

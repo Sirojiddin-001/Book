@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
-    <a className="pl-3 pl-sm-0 uk-navbar-item logo" href="#logo">
+    <Link className="pl-3 pl-sm-0 uk-navbar-item logo" to="/">
       Logo
-    </a>
+    </Link>
   );
 };
 

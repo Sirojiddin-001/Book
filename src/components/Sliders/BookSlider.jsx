@@ -24,9 +24,9 @@ const BookSlider = ({ title, books }) => {
         </div>
       </div>
       <div className="my-2 card-body">
-        <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-grid">
+        <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-grid">
           {books.map((book) => (
-            <li>
+            <li key={book.id}>
               <BookSliderItem
                 id={book.id}
                 cover={book.cover}

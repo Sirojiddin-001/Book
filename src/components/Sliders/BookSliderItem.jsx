@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BookSliderItem = ({ id, cover, title, author, year }) => {
   return (
     <div className="bsi">
-      <a href={`#${id}`}>
+      <Link to={`/book/${id}`}>
         <div className="bsi-body">
           <img src={`https://new.book.ru${cover}`} alt={title} />
         </div>
@@ -15,7 +16,7 @@ const BookSliderItem = ({ id, cover, title, author, year }) => {
             <li>{year}</li>
           </ul>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
