@@ -6,7 +6,7 @@ const Button = ({ children,className, ...props }) => {
       <button
         {...props}
         type="button"
-        className={`uk-button w-full bg-blue-600 hover:bg-blue-700 rounded normal-case font-semibold text-white transition ease-in-out duration-200 border border-blue-800 ${className}`}
+        className={`uk-button uk-width-1-1 book-primary-btn ${className}`}
       >
         {children}
       </button>

@@ -8,14 +8,14 @@ const InputText = ({ label, touched, errors, ...props }) => {
       </label>
       <div className="uk-form-controls">
         <input
-          className={`uk-input text-sm rounded ${
+          className={`uk-input book-input ${
             touched && errors ? "uk-form-danger" : "uk-form-light"
           }`}
           {...props}
         />
       </div>
       {touched && errors && (
-        <span className="text-sm uk-text-danger">{errors}</span>
+        <span className="uk-text-small text-danger">{errors}</span>
       )}
     </div>
   );

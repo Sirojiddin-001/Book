@@ -7,8 +7,11 @@ import InputText from "./../components/UI/InputText";
 import InputPassword from "./../components/UI/InputPassword";
 import Button from "./../components/UI/Button";
 import { backgrounds, bottomTexts, yupValidators } from "./../utils/consts";
+import { useNavigate } from "react-router";
 
 const Login = () => {
+  const navigator = useNavigate()
+
   return (
     <Grid>
       <FormBlock
@@ -22,7 +25,14 @@ const Login = () => {
           initialValues={{ emailLogin: "", passwordLogin: "" }}
           validateOnBlur
           onSubmit={({ emailLogin, passwordLogin }) => {
-            console.log(emailLogin, passwordLogin)
+            console.log(emailLogin, passwordLogin);
+            let data = JSON.parse(localStorage.getItem("user"))
+            if (data && data.email === emailLogin && data.password === passwordLogin) {
+              navigator("/")
+            } else {
+              console.error("Invalid user email or password")
+            }
+
           }}
           validationSchema={yupValidators.loginPage(
             "emailLogin",

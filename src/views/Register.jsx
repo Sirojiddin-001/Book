@@ -1,20 +1,18 @@
 import React from "react";
 import { Formik } from "formik";
-import Grid from "./../components/Login Form/Grid";
-import Background from "./../components/Login Form/Background";
-import FormBlock from "./../components/Login Form/FormBlock";
-import InputText from "./../components/Login Form/InputText";
-import InputPassword from "./../components/Login Form/InputPassword";
-import Button from "./../components/Login Form/Button";
+import Grid from "./../components/UI/Grid";
+import Background from "./../components/UI/Background";
+import FormBlock from "./../components/UI/FormBlock";
+import InputText from "./../components/UI/InputText";
+import InputPassword from "./../components/UI/InputPassword";
+import Button from "./../components/UI/Button";
 import { backgrounds, bottomTexts, yupValidators } from "./../utils/consts";
 import { useNavigate } from "react-router";
-import { signUp } from "./../utils/firebaseAuth";
 
 const Register = () => {
   const navigate = useNavigate();
   return (
     <Grid>
-      <Background url={backgrounds.registerPage} />
       <FormBlock
         title="Sign Up"
         bottomTitle="register"
@@ -30,9 +28,13 @@ const Register = () => {
           }}
           validateOnBlur
           onSubmit={({ loginRegister, emailRegister, passwordRegister }) => {
-            signUp(loginRegister, emailRegister, passwordRegister).then(() => {
-              navigate("/beginner");
-            });
+            localStorage.setItem("user", JSON.stringify({
+              name: loginRegister,
+              email: emailRegister,
+              password: passwordRegister
+            }))
+
+            navigate("/")
           }}
           validationSchema={yupValidators.registerPage(
             "loginRegister",
@@ -88,6 +90,7 @@ const Register = () => {
           )}
         </Formik>
       </FormBlock>
+      <Background url={backgrounds.registerPage} />
     </Grid>
   );
 };

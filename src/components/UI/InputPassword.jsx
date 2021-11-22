@@ -6,14 +6,14 @@ const InputPassword = ({ fp = false, touched, errors, ...props }) => {
 
   return (
     <div className="uk-margin">
-      <div className="flex justify-between">
+      <div className="d-flex justify-content-between">
         <label className="uk-form-label uk-text-dark" htmlFor={props.name}>
           Password
         </label>
         {fp && (
           <NavLink
             to="/forgotPassword"
-            className="uk-form-label text-blue-600 font-semibold"
+            className="uk-form-label text-primary font-semibold"
           >
             Forgot password?
           </NavLink>
@@ -21,20 +21,20 @@ const InputPassword = ({ fp = false, touched, errors, ...props }) => {
       </div>
 
       <div className="uk-form-controls">
-        <div className="uk-inline w-full">
+        <div className="uk-inline uk-width-1-1">
           <a
             href="##"
-            className="uk-form-icon uk-form-icon-flip hover:no-underline hover:text-gray-700 transition-colors ease-in-out duration-200"
+            className="uk-form-icon uk-form-icon-flip book-form-icon"
             onClick={() => {
               setIsVisible(!isVisible);
             }}
           >
-            <i className={`fa ${isVisible ? "fa-eye-slash" : "fa-eye"}`}></i>
+            <i className={`fa ${isVisible ? "fa-eye-slash" : "fa-eye"} ${touched && errors ? "text-danger" : " "
+              }`}></i>
           </a>
           <input
-            className={`uk-input text-sm rounded ${
-              touched && errors ? "uk-form-danger" : "uk-form-light"
-            }`}
+            className={`uk-input book-input ${touched && errors ? "uk-form-danger" : "uk-form-light"
+              }`}
             type={isVisible ? "text" : "password"}
             placeholder="Enter password"
             {...props}
@@ -42,7 +42,7 @@ const InputPassword = ({ fp = false, touched, errors, ...props }) => {
         </div>
       </div>
       {touched && errors && (
-        <span className="text-sm uk-text-danger">{errors}</span>
+        <span className="uk-text-small text-danger">{errors}</span>
       )}
     </div>
   );

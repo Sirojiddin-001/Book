@@ -1,17 +1,15 @@
 import React from "react";
 import { Formik } from "formik";
-import Grid from "./../components/Login Form/Grid";
-import Background from "./../components/Login Form/Background";
-import FormBlock from "./../components/Login Form/FormBlock";
-import InputText from "./../components/Login Form/InputText";
-import Button from "./../components/Login Form/Button";
+import Grid from "./../components/UI/Grid";
+import Background from "./../components/UI/Background";
+import FormBlock from "./../components/UI/FormBlock";
+import InputText from "./../components/UI/InputText";
+import Button from "./../components/UI/Button";
 import { backgrounds, bottomTexts, yupValidators } from "./../utils/consts";
-import { resetPassword } from "../utils/firebaseAuth";
 
 const ForgotPassword = () => {
   return (
     <Grid>
-      <Background url={backgrounds.forgotPasswordPage} />
       <FormBlock
         title="Reset Password"
         bottomText={bottomTexts.forgotPasswordPage}
@@ -24,7 +22,7 @@ const ForgotPassword = () => {
           }}
           validateOnBlur
             onSubmit={({ emailForgotPassword }) => {
-              resetPassword(emailForgotPassword);
+             
             }}
           validationSchema={yupValidators.forgotPasswordPage(
             "emailForgotPassword"
@@ -61,6 +59,7 @@ const ForgotPassword = () => {
           )}
         </Formik>
       </FormBlock>
+      <Background url={backgrounds.forgotPasswordPage} />
     </Grid>
   );
 };
