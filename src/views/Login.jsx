@@ -1,63 +1,74 @@
 import React from "react";
-import { LgToXl } from "../hooks/useMedia";
 import { Formik } from "formik";
-import * as yup from "yup";
+import Grid from "./../components/UI/Grid";
+import Background from "./../components/UI/Background";
+import FormBlock from "./../components/UI/FormBlock";
+import InputText from "./../components/UI/InputText";
+import InputPassword from "./../components/UI/InputPassword";
+import Button from "./../components/UI/Button";
+import { backgrounds, bottomTexts, yupValidators } from "./../utils/consts";
 
 const Login = () => {
-  const schema = yup.object().shape({
-    emailLogin: yup
-      .string()
-      .email("Invalid email address")
-      .required("This is a required field"),
-    passwordLogin: yup
-      .string()
-      .min(6, "Must be at least 6 chars long")
-      .matches(/^[A-zА-я0-9_ ]+$/, "Please remove unnecessary characters")
-      .required("This is a required field"),
-  });
-
   return (
-    <div className="uk-background-default" data-uk-height-viewport>
-      <div className="container uk-flex">
-        <div className="uk-width-1-2@m">
-          <Formik
-            initialValues={{ emailLogin: "", passwordLogin: "" }}
-            validateOnBlur
-            onSubmit={({ emailLogin, passwordLogin }) => {
-              console.log(emailLogin, passwordLogin);
-            }}
-            validationSchema={schema}
-          >
-            {({
-              values,
-              errors,
-              touched,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              isValid,
-            }) => (
-              <form className="uk-form-stacked">
-                <div className="uk-margin">
-                  <input
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.emailLogin}   
-                    className={`uk-input ${errors.emailLogin ? 'uk-form-danger' : ''}`}
-                    type="email"
-                    placeholder="Enter your e-mail"
-                    name="emailLogin"
-                  />
-                </div>
-              </form>
-            )}
-          </Formik>
-        </div>
-        <LgToXl>
-          <div className="uk-width-2-3">2</div>
-        </LgToXl>
-      </div>
-    </div>
+    <Grid>
+      <FormBlock
+        title="Login"
+        bottomTitle="login"
+        bottomText={bottomTexts.loginPage}
+        url="/register"
+        to="Sign Up"
+      >
+        <Formik
+          initialValues={{ emailLogin: "", passwordLogin: "" }}
+          validateOnBlur
+          onSubmit={({ emailLogin, passwordLogin }) => {
+            console.log(emailLogin, passwordLogin)
+          }}
+          validationSchema={yupValidators.loginPage(
+            "emailLogin",
+            "passwordLogin"
+          )}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isValid,
+          }) => (
+            <form className="uk-form-stacked">
+              <InputText
+                label="E-mail"
+                placeholder="Enter your e-mail"
+                name="emailLogin"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.emailLogin}
+                touched={touched.emailLogin}
+                errors={errors.emailLogin}
+              />
+
+              <InputPassword
+                name="passwordLogin"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.passwordLogin}
+                touched={touched.passwordLogin}
+                errors={errors.passwordLogin}
+                fp={true}
+              />
+
+              <Button className="disabled:button" disabled={!isValid} onClick={handleSubmit}>
+                Login
+              </Button>
+            </form>
+          )}
+        </Formik>
+      </FormBlock>
+      <Background url={backgrounds.loginPage} />
+    </Grid>
   );
 };
 

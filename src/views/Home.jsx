@@ -1,7 +1,7 @@
 import React from "react";
 import BookSlider from "../components/Sliders/BookSlider"
 import { useTranslation } from "react-i18next";
-import { books } from "../utils/constants";
+import { books } from "../utils/books";
 
 const Home = () => {
   const { t } = useTranslation();
