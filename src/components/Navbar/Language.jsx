@@ -54,7 +54,7 @@ const Language = () => {
           </span>
 
           <div
-            className="uk-border-rounded bg-100"
+            className="uk-border-rounded border-500 bg-100"
             uk-dropdown="mode: click; boundary: .language"
           >
             <Content />
@@ -71,7 +71,7 @@ const Language = () => {
           </span>
 
           <div
-            className="uk-border-rounded bg-100"
+            className="uk-border-rounded border-500 bg-100"
             uk-dropdown="mode: click; boundary: .language-m; pos: top-right"
           >
             <Content />

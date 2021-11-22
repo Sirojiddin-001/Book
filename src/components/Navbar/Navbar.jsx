@@ -5,6 +5,8 @@ import AuthBtns from "./AuthBtns";
 import Logo from "./Logo";
 import { useTranslation } from "react-i18next";
 import { SmToXl, SmToLg, XSmAngBelow } from "../../hooks/useMedia";
+import Profile from "./Profile";
+const data = JSON.parse(localStorage.getItem("user"));
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -24,7 +26,11 @@ const Navbar = () => {
           </XSmAngBelow>
 
           <SmToLg>
-            <div className="menu-btn mr-3" tabIndex="0" uk-toggle="target: #vertical-menu">
+            <div
+              className="menu-btn mr-3"
+              tabIndex="0"
+              uk-toggle="target: #vertical-menu"
+            >
               <span className="far fa-bars"></span>
             </div>
           </SmToLg>
@@ -44,8 +50,7 @@ const Navbar = () => {
           <Search />
 
           <Language />
-
-          <AuthBtns />
+          {data ? <Profile /> : <AuthBtns />}
         </div>
 
         <div className="nav-overlay uk-navbar-left uk-flex-1" hidden>

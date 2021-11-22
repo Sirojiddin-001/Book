@@ -58,7 +58,8 @@ $font-size-base: 0.94rem;
 $font-size-lg: ($font-size-base * 1.25);
 $font-size-sm: ($font-size-base * 1.1);
 $font-size-xs: ($font-size-base / 1.1);
-$btn-transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+$btn-transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+  box-shadow 0.15s;
 $btn-focus-width: 0;
 $btn-focus-box-shadow: none;
 $pagination-focus-box-shadow: none;
@@ -70,16 +71,22 @@ $dropdown-link-hover-bg: #e0f3ff;
 $dropdown-item-padding-y: 0.4rem;
 $dropdown-padding-y: 0.65rem;
 $box-shadow-default: 0 0.46875rem 2.1875rem rgba(darken($primary, 50%), 0.03),
-  0 0.9375rem 1.40625rem rgba(darken($primary, 50%), 0.03), 0 0.25rem 0.53125rem rgba(darken($primary, 50%), 0.05),
+  0 0.9375rem 1.40625rem rgba(darken($primary, 50%), 0.03),
+  0 0.25rem 0.53125rem rgba(darken($primary, 50%), 0.05),
   0 0.125rem 0.1875rem rgba(darken($primary, 50%), 0.03);
-$box-shadow-default-right: 0.46875rem 0 2.1875rem rgba(darken($primary, 50%), 0.03),
-  0.9375rem 0 1.40625rem rgba(darken($primary, 50%), 0.03), 0.25rem 0 0.53125rem rgba(darken($primary, 50%), 0.05),
+$box-shadow-default-right: 0.46875rem 0 2.1875rem
+    rgba(darken($primary, 50%), 0.03),
+  0.9375rem 0 1.40625rem rgba(darken($primary, 50%), 0.03),
+  0.25rem 0 0.53125rem rgba(darken($primary, 50%), 0.05),
   0.125rem 0 0.1875rem rgba(darken($primary, 50%), 0.03);
 $box-shadow-default-inverse: 0 -0.46875rem 2.1875rem rgba(darken($primary, 50%), 0.03),
-  0 -0.9375rem 1.40625rem rgba(darken($primary, 50%), 0.03), 0 -0.25rem 0.53125rem rgba(darken($primary, 50%), 0.05),
+  0 -0.9375rem 1.40625rem rgba(darken($primary, 50%), 0.03),
+  0 -0.25rem 0.53125rem rgba(darken($primary, 50%), 0.05),
   0 -0.125rem 0.1875rem rgba(darken($primary, 50%), 0.03);
-$box-shadow-lg-default: 0 0.76875rem 2.4875rem rgba($gray-900, 0.3), 0 1.3375rem 1.70625rem rgba($gray-900, 0.3),
-  0 0.55rem 0.53125rem rgba(darken($gray-900, 50%), 0.05), 0 0.225rem 0.4375rem rgba($gray-900, 0.3);
+$box-shadow-lg-default: 0 0.76875rem 2.4875rem rgba($gray-900, 0.3),
+  0 1.3375rem 1.70625rem rgba($gray-900, 0.3),
+  0 0.55rem 0.53125rem rgba(darken($gray-900, 50%), 0.05),
+  0 0.225rem 0.4375rem rgba($gray-900, 0.3);
 $form-check-input-margin-y: 0.3rem;
 $input-group-addon-bg: lighten($dropdown-link-hover-bg, 3%);
 @function text($bg) {
@@ -147,8 +154,10 @@ $input-group-addon-bg: lighten($dropdown-link-hover-bg, 3%);
 }
 
 @mixin box-shadow-architect($shadow) {
-  box-shadow: 0 0.66875rem 2.3875rem rgba($shadow, 0.03), 0 1.1375rem 1.60625rem rgba($shadow, 0.03),
-    0 0.45rem 0.73125rem rgba($shadow, 0.05), 0 0.325rem 0.3875rem rgba($shadow, 0.03);
+  box-shadow: 0 0.66875rem 2.3875rem rgba($shadow, 0.03),
+    0 1.1375rem 1.60625rem rgba($shadow, 0.03),
+    0 0.45rem 0.73125rem rgba($shadow, 0.05),
+    0 0.325rem 0.3875rem rgba($shadow, 0.03);
 }
 
 // Border
@@ -346,6 +355,7 @@ html {
     object-fit: cover;
     object-position: left center;
     border-radius: 3px;
+    border: 1px solid $gray-300
   }
 }
 
@@ -380,6 +390,28 @@ html {
     li:last-child {
       border-bottom: none;
     }
+  }
+
+  .uk-accordion-title::before {
+    background-size: 12px;
+    background-image: url("../img/chevron-down.svg");
+    transition: 0.1s;
+  }
+  .uk-open {
+    .uk-accordion-title::before {
+      background-image: url("../img/chevron-up.svg");
+      animation: chevron 0.25s linear;
+    }
+  }
+}
+
+@keyframes chevron {
+  0% {
+    transform: rotateX(90deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
   }
 }
 
@@ -529,14 +561,27 @@ html {
 .login-block {
   width: 100%;
   max-width: 360px;
-  padding: 0 1rem;
+  padding: 2rem;
 }
 
-.book-form-icon{
+.book-form-icon {
   text-decoration: none !important;
-  transition: 0.25s ease-in-out
+  transition: 0.25s ease-in-out;
 }
 
-.font-semibold{
+.font-semibold {
   font-weight: 600;
+}
+
+.profile {
+  display: grid;
+  place-items: center;
+}
+
+.profile-block{
+  border-bottom: 1px solid $gray-500
+}
+
+.profile-info{
+  display: inline-grid;
 }
