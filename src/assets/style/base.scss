@@ -8,16 +8,8 @@ $gray-700: #7e84a3;
 $gray-900: #131523;
 $black: #000;
 $grays: ();
-$grays: map-merge(
-  (
-    "100": $gray-100,
-    "300": $gray-300,
-    "500": $gray-500,
-    "700": $gray-700,
-    "900": $gray-900,
-  ),
-  $grays
-);
+$grays: map-merge( ( "100": $gray-100, "300": $gray-300, "500": $gray-500, "700": $gray-700, "900": $gray-900, ),
+$grays);
 //--#{$color}
 $blue: #0058ff;
 $indigo: #444054;
@@ -39,549 +31,566 @@ $danger: $red;
 $light: $blue-light;
 $dark: $gray-900;
 $theme-colors: ();
-$theme-colors: map-merge(
-  (
-    "primary": $primary,
-    "secondary": $secondary,
-    "success": $success,
-    "info": $info,
-    "warning": $warning,
-    "danger": $danger,
-    "light": $light,
-    "dark": $dark,
-  ),
-  $theme-colors
-);
+$theme-colors: map-merge( ( "primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark, ),
+$theme-colors);
 // BOOTSTRAP OVERWRITES
 $headings-font-weight: 400;
 $font-size-base: 0.94rem;
 $font-size-lg: ($font-size-base * 1.25);
 $font-size-sm: ($font-size-base * 1.1);
 $font-size-xs: ($font-size-base / 1.1);
-$btn-transition: color 0.15s, background-color 0.15s, border-color 0.15s,
-  box-shadow 0.15s;
+$btn-transition: color 0.15s,
+background-color 0.15s,
+border-color 0.15s,
+box-shadow 0.15s;
 $btn-focus-width: 0;
 $btn-focus-box-shadow: none;
 $pagination-focus-box-shadow: none;
 $body-color: $gray-700;
 $card-cap-bg: $white;
-$card-border-color: rgba(darken($primary, 25%), 0.125);
+$card-border-color: rgba(darken($primary, 25%),
+0.125);
 $dropdown-min-width: 15rem;
 $dropdown-link-hover-bg: #e0f3ff;
 $dropdown-item-padding-y: 0.4rem;
 $dropdown-padding-y: 0.65rem;
-$box-shadow-default: 0 0.46875rem 2.1875rem rgba(darken($primary, 50%), 0.03),
-  0 0.9375rem 1.40625rem rgba(darken($primary, 50%), 0.03),
-  0 0.25rem 0.53125rem rgba(darken($primary, 50%), 0.05),
-  0 0.125rem 0.1875rem rgba(darken($primary, 50%), 0.03);
-$box-shadow-default-right: 0.46875rem 0 2.1875rem
-    rgba(darken($primary, 50%), 0.03),
-  0.9375rem 0 1.40625rem rgba(darken($primary, 50%), 0.03),
-  0.25rem 0 0.53125rem rgba(darken($primary, 50%), 0.05),
-  0.125rem 0 0.1875rem rgba(darken($primary, 50%), 0.03);
-$box-shadow-default-inverse: 0 -0.46875rem 2.1875rem rgba(darken($primary, 50%), 0.03),
-  0 -0.9375rem 1.40625rem rgba(darken($primary, 50%), 0.03),
-  0 -0.25rem 0.53125rem rgba(darken($primary, 50%), 0.05),
-  0 -0.125rem 0.1875rem rgba(darken($primary, 50%), 0.03);
-$box-shadow-lg-default: 0 0.76875rem 2.4875rem rgba($gray-900, 0.3),
-  0 1.3375rem 1.70625rem rgba($gray-900, 0.3),
-  0 0.55rem 0.53125rem rgba(darken($gray-900, 50%), 0.05),
-  0 0.225rem 0.4375rem rgba($gray-900, 0.3);
+$box-shadow-default: 0 0.46875rem 2.1875rem rgba(darken($primary, 50%),
+0.03),
+0 0.9375rem 1.40625rem rgba(darken($primary, 50%),
+0.03),
+0 0.25rem 0.53125rem rgba(darken($primary, 50%),
+0.05),
+0 0.125rem 0.1875rem rgba(darken($primary, 50%),
+0.03);
+$box-shadow-default-right: 0.46875rem 0 2.1875rem rgba(darken($primary, 50%),
+0.03),
+0.9375rem 0 1.40625rem rgba(darken($primary, 50%),
+0.03),
+0.25rem 0 0.53125rem rgba(darken($primary, 50%),
+0.05),
+0.125rem 0 0.1875rem rgba(darken($primary, 50%),
+0.03);
+$box-shadow-default-inverse: 0 -0.46875rem 2.1875rem rgba(darken($primary, 50%),
+0.03),
+0 -0.9375rem 1.40625rem rgba(darken($primary, 50%),
+0.03),
+0 -0.25rem 0.53125rem rgba(darken($primary, 50%),
+0.05),
+0 -0.125rem 0.1875rem rgba(darken($primary, 50%),
+0.03);
+$box-shadow-lg-default: 0 0.76875rem 2.4875rem rgba($gray-900,
+0.3),
+0 1.3375rem 1.70625rem rgba($gray-900,
+0.3),
+0 0.55rem 0.53125rem rgba(darken($gray-900, 50%),
+0.05),
+0 0.225rem 0.4375rem rgba($gray-900,
+0.3);
 $form-check-input-margin-y: 0.3rem;
-$input-group-addon-bg: lighten($dropdown-link-hover-bg, 3%);
+$input-group-addon-bg: lighten($dropdown-link-hover-bg,
+3%);
 @function text($bg) {
-  @if (lightness($bg) >62%) {
-    @return #000;
-  } @else {
-    @return #fff;
-  }
+    @if (lightness($bg)>62%) {
+        @return #000;
+    }
+    @else {
+        @return #fff;
+    }
 }
 
 // Mixins
-@mixin btn-type($background: $blue, $color: #fff) {
-  border-radius: 0.25rem;
-  color: $color;
-  background-color: $background;
-  text-transform: none;
-  font-weight: 600;
-  line-height: 2.5rem;
-  transition: 0.25s ease-in-out;
-  &:hover {
-    background-color: darken($background, 5%);
-  }
-  &:active {
-    background-color: darken($background, 10%);
-  }
-  &:focus {
-    background-color: darken($background, 10%);
-    box-shadow: 0 0 0 3px transparentize($background, 0.8);
-  }
-  &:disabled {
-    background-color: darken($light, 5%);
-    color: darken($light, 30%);
-  }
+@mixin btn-type($background: $blue,
+$color: #fff) {
+    border-radius: 0.25rem;
+    color: $color;
+    background-color: $background;
+    text-transform: none;
+    font-weight: 600;
+    line-height: 2.5rem;
+    transition: 0.25s ease-in-out;
+    &:hover {
+        background-color: darken($background, 5%);
+    }
+    &:active {
+        background-color: darken($background, 10%);
+    }
+    &:focus {
+        background-color: darken($background, 10%);
+        box-shadow: 0 0 0 3px transparentize($background, 0.8);
+    }
+    &:disabled {
+        background-color: darken($light, 5%);
+        color: darken($light, 30%);
+    }
 }
 
 @mixin outline-btn-type($background: $blue) {
-  line-height: 2.25rem !important;
-  border-radius: 4px;
-  border: 2px solid $background;
-  color: $background;
-  background-color: transparent;
-  text-transform: none;
-  font-weight: 600;
-  transition: 0.25s ease-in-out !important;
-  &:hover {
-    color: text($background);
-    background-color: darken($background, 5%);
-    border-color: darken($background, 5%);
-  }
-  &:active {
-    color: text($background);
-    background-color: darken($background, 10%);
-    border-color: darken($background, 10%);
-  }
-  &:focus {
-    color: text($background);
-    background-color: darken($background, 10%);
-    border-color: darken($background, 10%);
-    box-shadow: 0 0 0 3px transparentize($background, 0.8);
-  }
-  &:disabled {
-    background-color: darken($light, 5%);
-    color: darken($light, 30%);
-  }
+    line-height: 2.25rem !important;
+    border-radius: 4px;
+    border: 2px solid $background;
+    color: $background;
+    background-color: transparent;
+    text-transform: none;
+    font-weight: 600;
+    transition: 0.25s ease-in-out !important;
+    &:hover {
+        color: text($background);
+        background-color: darken($background, 5%);
+        border-color: darken($background, 5%);
+    }
+    &:active {
+        color: text($background);
+        background-color: darken($background, 10%);
+        border-color: darken($background, 10%);
+    }
+    &:focus {
+        color: text($background);
+        background-color: darken($background, 10%);
+        border-color: darken($background, 10%);
+        box-shadow: 0 0 0 3px transparentize($background, 0.8);
+    }
+    &:disabled {
+        background-color: darken($light, 5%);
+        color: darken($light, 30%);
+    }
 }
 
 @mixin box-shadow-architect($shadow) {
-  box-shadow: 0 0.66875rem 2.3875rem rgba($shadow, 0.03),
-    0 1.1375rem 1.60625rem rgba($shadow, 0.03),
-    0 0.45rem 0.73125rem rgba($shadow, 0.05),
-    0 0.325rem 0.3875rem rgba($shadow, 0.03);
+    box-shadow: 0 0.66875rem 2.3875rem rgba($shadow, 0.03), 0 1.1375rem 1.60625rem rgba($shadow, 0.03), 0 0.45rem 0.73125rem rgba($shadow, 0.05), 0 0.325rem 0.3875rem rgba($shadow, 0.03);
 }
 
 // Border
-@each $color, $value in $theme-colors {
-  .border-#{$color} {
-    border-color: $value;
-  }
-
-  .text-#{$color} {
-    color: $value !important;
-  }
+@each $color,
+$value in $theme-colors {
+    .border-#{$color} {
+        border-color: $value;
+    }
+    .text-#{$color} {
+        color: $value !important;
+    }
 }
 
-@each $color, $value in $grays {
-  .bg-#{$color} {
-    background-color: $value !important;
-  }
-  .border-#{$color} {
-    border: 1px solid $value !important;
-  }
+@each $color,
+$value in $grays {
+    .bg-#{$color} {
+        background-color: $value !important;
+    }
+    .border-#{$color} {
+        border: 1px solid $value !important;
+    }
 }
 
 html {
-  background-color: $gray-300;
-  font-family: "Inter", sans-serif !important;
-
-  & h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+    background-color: $gray-300;
     font-family: "Inter", sans-serif !important;
-  }
+    & h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Inter", sans-serif !important;
+    }
 }
 
 .book-input {
-  width: 100%;
-  border-radius: 0.25rem;
-  border: 2px solid $blue !important;
-  font-size: 0.875rem;
-  line-height: 2.5rem;
-  color: $gray-900 !important;
-  transition: 0.25s ease-in-out;
-  &:focus {
-    box-shadow: 0 0 0 3px transparentize($blue, 0.8);
-  }
-  &::placeholder {
-    color: $gray-700;
-  }
-
-  &.uk-form-danger {
-    border-color: $red !important;
-
+    width: 100%;
+    border-radius: 0.25rem;
+    border: 2px solid $blue !important;
+    font-size: 0.875rem;
+    line-height: 2.5rem;
+    color: $gray-900 !important;
+    transition: 0.25s ease-in-out;
     &:focus {
-      box-shadow: 0 0 0 3px transparentize($red, 0.8);
+        box-shadow: 0 0 0 3px transparentize($blue, 0.8);
     }
-
     &::placeholder {
-      color: lighten($red, 15%);
+        color: $gray-700;
     }
-  }
+    &.uk-form-danger {
+        border-color: $red !important;
+        &:focus {
+            box-shadow: 0 0 0 3px transparentize($red, 0.8);
+        }
+        &::placeholder {
+            color: lighten($red, 15%);
+        }
+    }
 }
 
 .book-primary-btn {
-  @include btn-type($blue, $white);
+    @include btn-type($blue,
+    $white);
+}
+
+.book-danger-btn {
+    @include btn-type($danger,
+    $white);
+}
+
+.book-success-btn {
+    @include btn-type($success,
+    $white);
 }
 
 .book-primary-btn-o {
-  @include outline-btn-type($blue);
+    @include outline-btn-type($blue);
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none !important;
-  color: $gray-900 !important;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    color: $gray-900 !important;
 }
 
 .search-input-icon {
-  position: absolute;
-  line-height: 2.5rem;
-  padding: 0 0.75rem;
-  & .icon {
-    color: $blue;
-    transition: 0.25s ease-in-out;
-    &:hover {
-      color: darken($blue, 10%);
+    position: absolute;
+    line-height: 2.5rem;
+    padding: 0 0.75rem;
+    & .icon {
+        color: $blue;
+        transition: 0.25s ease-in-out;
+        &:hover {
+            color: darken($blue, 10%);
+        }
     }
-  }
 }
 
 .language {
-  display: block;
-  width: 42px;
-  height: 42px;
-  border: 2px solid $blue;
-  border-radius: 100px;
-  transition: 0.25s ease-in-out;
-  cursor: pointer;
-  &:focus {
-    box-shadow: 0 0 0 3px transparentize($blue, 0.8);
-  }
-  & img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-    object-position: left center;
-    border: 2px solid #fff;
-    border-radius: 40px;
-  }
+    display: block;
+    width: 42px;
+    height: 42px;
+    border: 2px solid $blue;
+    border-radius: 100px;
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+    &:focus {
+        box-shadow: 0 0 0 3px transparentize($blue, 0.8);
+    }
+    & img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        object-position: left center;
+        border: 2px solid #fff;
+        border-radius: 40px;
+    }
 }
 
 .v-divider {
-  height: 50%;
-  border-right: 2px solid $gray-300;
-  border-radius: 5px;
+    height: 50%;
+    border-right: 2px solid $gray-300;
+    border-radius: 5px;
 }
 
 .language-select {
-  li > a {
-    color: $gray-700;
-  }
-  li.active > a {
-    color: $blue;
-    font-weight: 600;
-  }
-  li > a > img {
-    width: 1.5rem !important;
-    height: 1.25rem !important;
-    margin-right: 0.5rem;
-    border-radius: 3px;
-  }
+    li>a {
+        color: $gray-700;
+    }
+    li.active>a {
+        color: $blue;
+        font-weight: 600;
+    }
+    li>a>img {
+        width: 1.5rem !important;
+        height: 1.25rem !important;
+        margin-right: 0.5rem;
+        border-radius: 3px;
+    }
 }
 
 @media (max-width: 576px) {
-  .uk-navbar-nav > li > a,
-  .uk-navbar-item,
-  .uk-navbar-toggle {
-    min-height: 40px !important;
-  }
-  .uk-search-input {
-    font-size: 0.875rem !important;
-  }
-  .logo {
-    font-size: 1.5rem;
-  }
+    .uk-navbar-nav>li>a,
+    .uk-navbar-item,
+    .uk-navbar-toggle {
+        min-height: 40px !important;
+    }
+    .uk-search-input {
+        font-size: 0.875rem !important;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
 }
 
 .menu-btn {
-  display: block;
-  padding: 0 11px;
-  line-height: 36px;
-  border: 2px solid $blue;
-  border-radius: 100px;
-  color: $blue;
-  transition: 0.25s ease-in-out;
-  cursor: pointer;
-
-  &:focus-within {
-    box-shadow: 0 0 0 3px transparentize($blue, 0.8) !important;
-  }
+    display: block;
+    padding: 0 11px;
+    line-height: 36px;
+    border: 2px solid $blue;
+    border-radius: 100px;
+    color: $blue;
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+    &:focus-within {
+        box-shadow: 0 0 0 3px transparentize($blue, 0.8) !important;
+    }
 }
 
 .search-btn {
-  display: block;
-  padding: 0 9px;
-  line-height: 36px;
-  border: 2px solid $blue;
-  border-radius: 100px;
-  color: $blue;
-  transition: 0.25s ease-in-out;
-  cursor: pointer;
-  &:focus {
-    box-shadow: 0 0 0 3px transparentize($blue, 0.8);
-  }
+    display: block;
+    padding: 0 9px;
+    line-height: 36px;
+    border: 2px solid $blue;
+    border-radius: 100px;
+    color: $blue;
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+    &:focus {
+        box-shadow: 0 0 0 3px transparentize($blue, 0.8);
+    }
 }
 
 .search-btn-m {
-  color: $blue !important;
-  transition: 0.25s ease-in-out;
-  &:hover {
-    color: darken($blue, 10%) !important;
-  }
+    color: $blue !important;
+    transition: 0.25s ease-in-out;
+    &:hover {
+        color: darken($blue, 10%) !important;
+    }
 }
 
 .language-m {
-  display: flex;
-  width: 26px;
-  height: 18px;
-  & img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-    object-position: left center;
-    border-radius: 3px;
-    border: 1px solid $gray-300
-  }
+    display: flex;
+    width: 26px;
+    height: 18px;
+    & img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        object-position: left center;
+        border-radius: 3px;
+        border: 1px solid $gray-300
+    }
 }
 
 .category-block {
-  height: fit-content;
-  position: sticky;
-  top: 6.5rem;
+    height: fit-content;
+    position: sticky;
+    top: 6.5rem;
 }
 
 .category-list {
-  & > li > a {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    background-color: #fff;
-    border: 1px solid $gray-500;
-    border-radius: 4px;
-  }
-  & > li.uk-open > a {
-    color: $blue !important;
-  }
-  .uk-accordion-content {
-    background-color: #fff;
-    border: 1px solid $gray-500;
-    border-radius: 4px;
-    li > a {
-      padding: 0.5rem 1rem;
+    &>li>a {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        background-color: #fff;
+        border: 1px solid $gray-500;
+        border-radius: 4px;
     }
-    li {
-      border-bottom: 1px solid $gray-300;
+    &>li.uk-open>a {
+        color: $blue !important;
     }
-    li:last-child {
-      border-bottom: none;
+    .uk-accordion-content {
+        background-color: #fff;
+        border: 1px solid $gray-500;
+        border-radius: 4px;
+        li>a {
+            padding: 0.5rem 1rem;
+        }
+        li {
+            border-bottom: 1px solid $gray-300;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
     }
-  }
-
-  .uk-accordion-title::before {
-    background-size: 12px;
-    background-image: url("../img/chevron-down.svg");
-    transition: 0.1s;
-  }
-  .uk-open {
     .uk-accordion-title::before {
-      background-image: url("../img/chevron-up.svg");
-      animation: chevron 0.25s linear;
+        background-size: 12px;
+        background-image: url("../img/chevron-down.svg");
+        transition: 0.1s;
     }
-  }
+    .uk-open {
+        .uk-accordion-title::before {
+            background-image: url("../img/chevron-up.svg");
+            animation: chevron 0.25s linear;
+        }
+    }
 }
 
 @keyframes chevron {
-  0% {
-    transform: rotateX(90deg);
-  }
-
-  100% {
-    transform: rotateX(0deg);
-  }
+    0% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
 }
 
 .card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid $gray-300;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid $gray-300;
 }
 
 .card-title {
-  max-width: 80%;
-  margin: 0;
-  font-size: 100%;
-  font-weight: 700;
-  color: $gray-900;
+    max-width: 80%;
+    margin: 0;
+    font-size: 100%;
+    font-weight: 700;
+    color: $gray-900;
+}
+
+.card-title-details {
+    max-width: 100%;
+    margin: 0;
+    font-size: 100%;
+    font-weight: 700;
+    color: $gray-900;
 }
 
 .card-body {
-  padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .slider-btn {
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 100px;
-  border: 2px solid $blue;
-  color: $blue;
-  text-decoration: none !important;
-  transition: 0.25s ease-in-out;
-
-  &:hover {
-    background-color: $blue;
-    color: white;
-  }
-
-  &.uk-invisible {
-    visibility: visible !important;
-    background-color: #fff;
-    border-color: $gray-500;
-    color: $gray-500;
-    pointer-events: none;
-  }
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 100px;
+    border: 2px solid $blue;
+    color: $blue;
+    text-decoration: none !important;
+    transition: 0.25s ease-in-out;
+    &:hover {
+        background-color: $blue;
+        color: white;
+    }
+    &.uk-invisible {
+        visibility: visible !important;
+        background-color: #fff;
+        border-color: $gray-500;
+        color: $gray-500;
+        pointer-events: none;
+    }
 }
 
 .bsi {
-  position: relative;
-  display: block;
-  border: 1px solid $gray-500;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.25s ease-in-out;
-
-  & > a {
-    text-decoration: none;
-  }
-
-  &:hover {
-    border-color: $blue;
-    box-shadow: 0 6px 20px -6px $gray-500;
-  }
-
-  &-body {
     position: relative;
-    padding-bottom: 142%;
-    & img {
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 4px;
+    display: block;
+    border: 1px solid $gray-500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    &>a {
+        text-decoration: none;
     }
-  }
-
-  &-footer {
-    & > ul {
-      margin: 0;
-      padding: 0.25rem 0;
-      list-style: none;
-
-      & > li {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        padding: 0 0.5rem;
-        font-size: 0.875rem;
-
-        &:nth-child(1) {
-          font-weight: 600;
-          color: $gray-900;
-        }
-
-        &:nth-child(2) {
-          font-weight: 500;
-          color: $gray-700;
-        }
-
-        &:nth-child(3) {
-          font-size: 0.75rem;
-          font-weight: 500;
-          color: $gray-700;
-        }
-      }
+    &:hover {
+        border-color: $blue;
+        box-shadow: 0 6px 20px -6px $gray-500;
     }
-  }
+    &-body {
+        position: relative;
+        padding-bottom: 142%;
+        & img {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+        }
+    }
+    &-footer {
+        &>ul {
+            margin: 0;
+            padding: 0.25rem 0;
+            list-style: none;
+            &>li {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                padding: 0 0.5rem;
+                font-size: 0.875rem;
+                &:nth-child(1) {
+                    font-weight: 600;
+                    color: $gray-900;
+                }
+                &:nth-child(2) {
+                    font-weight: 500;
+                    color: $gray-700;
+                }
+                &:nth-child(3) {
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    color: $gray-700;
+                }
+            }
+        }
+    }
 }
 
 .book-navbar {
-  border-bottom: 1px solid $gray-500;
-  box-shadow: 0px 6px 20px -6px rgba($gray-900, 0.1);
+    border-bottom: 1px solid $gray-500;
+    box-shadow: 0px 6px 20px -6px rgba($gray-900, 0.1);
 }
 
 .book-footer {
-  padding: 1rem 1rem;
-  background-color: $white;
-  border-top: 1px solid $gray-500;
-
-  & p {
-    margin: 0;
-    text-align: center;
-    font-size: 0.875rem;
-    color: $gray-900;
-  }
+    padding: 1rem 1rem;
+    background-color: $white;
+    border-top: 1px solid $gray-500;
+    & p {
+        margin: 0;
+        text-align: center;
+        font-size: 0.875rem;
+        color: $gray-900;
+    }
 }
 
 .login-bg {
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: $blue;
-  background-blend-mode: hard-light;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: $blue;
+    background-blend-mode: hard-light;
 }
 
 .login-form {
-  display: grid;
-  place-items: center center;
-  background-color: $white;
+    display: grid;
+    place-items: center center;
+    background-color: $white;
 }
 
 .login-block {
-  width: 100%;
-  max-width: 360px;
-  padding: 2rem;
+    width: 100%;
+    max-width: 360px;
+    padding: 2rem;
 }
 
 .book-form-icon {
-  text-decoration: none !important;
-  transition: 0.25s ease-in-out;
+    text-decoration: none !important;
+    transition: 0.25s ease-in-out;
 }
 
 .font-semibold {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .profile {
-  display: grid;
-  place-items: center;
+    display: grid;
+    place-items: center;
 }
 
-.profile-block{
-  border-bottom: 1px solid $gray-500
+.profile-block {
+    border-bottom: 1px solid $gray-500
 }
 
-.profile-info{
-  display: inline-grid;
+.profile-info {
+    display: inline-grid;
+}
+
+.book-details-img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 4px;
+    border: 1px solid $gray-500;
 }
