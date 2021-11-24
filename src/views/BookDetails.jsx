@@ -60,7 +60,7 @@ const BookDetails = () => {
           </div>
           <div className="mt-4 mb-2">
             <ul data-uk-accordion className="category-list">
-              <li className="uk-open">
+              <li>
                 <a className="uk-accordion-title" href="#books">
                   Description
                 </a>
