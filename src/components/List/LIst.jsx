@@ -1,6 +1,7 @@
 import React from "react";
 import { LgToXl } from "../../hooks/useMedia";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const List = () => {
   const { t } = useTranslation();
@@ -16,7 +17,7 @@ const List = () => {
             <div className="uk-accordion-content">
               <ul className="uk-nav uk-nav-default">
                 <li>
-                  <a href="#">Item</a>
+                  <Link to="/book-category/1">Category 1</Link>
                 </li>
                 <li>
                   <a href="#">Item</a>

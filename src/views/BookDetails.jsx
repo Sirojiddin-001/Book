@@ -9,7 +9,7 @@ const BookDetails = () => {
   useEffect(() => {
     const data = books.filter((book) => book.id === +id);
     setData(data);
-  }, []);
+  }, [id]);
 
   return data.length > 0 ? (
     <>

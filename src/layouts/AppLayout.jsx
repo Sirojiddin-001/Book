@@ -9,7 +9,7 @@ const AppLayout = ({ children }) => {
     <div>
       <Navbar />
       <OffCanvas/>
-      <div className="px-sm-0 container uk-flex pt-4" uk-height-viewport="expand: true">
+      <div className="px-sm-0 container uk-flex mt-4" uk-height-viewport="expand: true">
         <List />
         <div className="ml-auto uk-width-2-3@m">{children}</div>
       </div>
