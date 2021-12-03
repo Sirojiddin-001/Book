@@ -3,7 +3,7 @@ import { books } from "../utils/books";
 import BookSliderItem from "../components/Sliders/BookSliderItem";
 
 const BookCategory = () => {
-  return (
+  return books && books.length > 0 ? (
     <div className="mb-4">
       <div className="header d-flex justify-content-between">
         <h3 className="uk-text-bold">Category 1</h3>
@@ -27,7 +27,7 @@ const BookCategory = () => {
         })}
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default BookCategory;
