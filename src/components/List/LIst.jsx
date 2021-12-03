@@ -20,16 +20,16 @@ const List = () => {
                   <Link to="/book-category/1">Category 1</Link>
                 </li>
                 <li>
-                  <a href="#">Item</a>
+                  <Link to="/book-category/1">Item</Link>
                 </li>
                 <li>
-                  <a href="#">Item</a>
+                  <Link to="/book-category/1">Item</Link>
                 </li>
               </ul>
             </div>
           </li>
           <li>
-            <a className="uk-accordion-title" href="#">
+            <a className="uk-accordion-title" href="#audio-books">
               {t("audio_books")}
             </a>
             <div className="uk-accordion-content">

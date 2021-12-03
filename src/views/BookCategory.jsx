@@ -10,21 +10,17 @@ const BookCategory = () => {
       </div>
 
       <div className="uk-child-width-1-2 uk-child-width-1-3@s" data-uk-grid>
-        {books.map((book, idx) => {
-          if (idx < 30) {
-            return (
-              <div key={book.id}>
-                <BookSliderItem
-                  id={book.id}
-                  cover={book.cover}
-                  title={book.name}
-                  author={book.author}
-                  year={book.year}
-                />
-              </div>
-            );
-          }
-        })}
+        {books.splice(0, 30).map((book) => (
+          <div key={book.id}>
+            <BookSliderItem
+              id={book.id}
+              cover={book.cover}
+              title={book.name}
+              author={book.author}
+              year={book.year}
+            />
+          </div>
+        ))}
       </div>
     </div>
   ) : null;

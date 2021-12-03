@@ -57,74 +57,24 @@ const OffCanvas = () => {
 
         <ul className="mt-4 uk-nav-default uk-nav-parent-icon" data-uk-nav>
           <li className="uk-active uk-parent uk-open">
-            <a href="#">Parent</a>
+            <a href="#1">Parent</a>
             <ul className="uk-nav-sub">
               <li>
-                <a href="#">Sub item</a>
+                <a href="#2">Sub item</a>
               </li>
               <li>
-                <a href="#">Sub item</a>
+                <a href="#3">Sub item</a>
               </li>
               <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-            </ul>
-          </li>
-          <li className="uk-parent">
-            <a href="#">Parent</a>
-            <ul className="uk-nav-sub">
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
+                <a href="#4">Sub item</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="#">Settings</a>
+            <a href="#5">Settings</a>
           </li>
           <li>
-            <a href="#">Log Out</a>
+            <a href="#6">Log Out</a>
           </li>
         </ul>
       </div>
